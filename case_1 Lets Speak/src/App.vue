@@ -1,45 +1,48 @@
 <template>
-  <body class="hg container">
+  <body class="page container">
     <Menu />
     <TheHeader />
     <Content />
-    <Contacts />
     <TheFooter />
   </body>
 </template>
 
 <script>
-import TheFooter from "./components/TheFooter";
-import TheHeader from "./components/TheHeader";
-import Contacts from "./components/Contacts";
-import Content from "./components/Content";
-import Menu from "./components/Menu";
+import TheFooter from './components/TheFooter'
+import TheHeader from './components/TheHeader'
+import Content from './components/Content'
+import Menu from './components/Menu'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     TheFooter,
     TheHeader,
-    Contacts,
     Content,
-    Menu,
-  },
-};
+    Menu
+  }
+}
 </script>
 
 <style >
-@import "./style/normalize.css";
+@import './style/normalize.css';
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #3c425f;
 }
 
-.hg {
+.page {
   display: grid;
-  grid-template-columns: 280px 1fr 280px;
+  grid-template-areas:
+    'navigation header'
+    'navigation main'
+    'footer footer';
+  grid-template-columns: 280px 1fr;
   grid-template-rows:
     80px
     1fr

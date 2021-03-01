@@ -25,7 +25,7 @@
 
 <style lang="scss" scoped>
 .page-header {
-  grid-column: 2 / -1;
+  grid-area: header;
   display: grid;
   grid-template-columns: 1fr auto auto auto;
   &-input {

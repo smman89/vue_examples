@@ -1,15 +1,16 @@
 <template>
   <footer class="hg-footer">
-    <span class="copyright"> © 2020 </span>
-    <span class="copyright"> Let’s Speak, языковая школа </span>
-    <span class="copyright"> Сайт создан в HTML Academy </span>
+    <p class="copyright">© 2020</p>
+    <a class="page-footer-logo" href="#"> Let’s Speak, языковая школа </a>
+    <p class="copyright-details">
+      Сайт создан в <a href="htmlacademy.ru">HTML Academy</a>
+    </p>
   </footer>
 </template>
 
 <style lang="scss" scoped>
 .footer {
-  grid-column: 1 / 4;
-  grid-row: 3/4;
+  grid-area: footer;
   display: flex;
 }
 </style>
