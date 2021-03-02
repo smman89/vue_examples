@@ -1,0 +1,16 @@
+//Document Colors
+$lightBlue: #F1F3FE;;
+$darkBlue: #3C425F;
+$primaryWhite: #FFFFFF;
+$indigo: #576BCC;
+$eggBlue: #0BC4CF;
+$perano: #B4BEF0;
+
+//Screen Colors
+$screenLightBlue: $lightBlue;
+
+//typography
+$text-color--regular: $darkBlue !global;
+$text-color--accent: $eggBlue !global;
+$text-color--blue: $indigo !global;
+$text-color--white: $primaryWhite !global;

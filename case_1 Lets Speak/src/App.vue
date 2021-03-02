@@ -24,8 +24,9 @@ export default {
 }
 </script>
 
-<style >
+<style lang="scss">
 @import './style/normalize.css';
+@import './style/base/index';
 #app {
   padding: 0;
   margin: 0;
@@ -53,5 +54,15 @@ export default {
 .container {
   width: 1440px;
   margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
 }
 </style>

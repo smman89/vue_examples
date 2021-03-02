@@ -2,13 +2,7 @@
   <header class="page-header">
     <div class="search">
       <form method="GET" action="#">
-        <input
-          class="search-field"
-          type="text"
-          name="search"
-          id="search"
-          placeholder="Поиск..."
-        />
+        <input class="search-field" type="text" name="search" id="search" placeholder="Поиск..." />
       </form>
     </div>
     <div class="profile item-with-picture" data-text="О">
@@ -27,15 +21,16 @@
 .page-header {
   grid-area: header;
   display: grid;
-  grid-template-columns: 1fr auto auto auto;
+  grid-template-columns: 1fr auto 80px;
   &-input {
     border-style: none;
   }
 }
 .search {
-  grid-column: 1/2;
+  margin-top: 10px;
+  margin-left: 30px;
   &-field {
-    height: 100px;
+    padding: 20px 20px 20px 32px;
   }
 }
 .user {
@@ -51,5 +46,38 @@
     background: #f1f3fe;
     border-radius: 20px;
   }
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 10px;
+  max-width: 400px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.item-with-picture::before {
+  content: attr(data-text);
+  width: 40px;
+  height: 40px;
+}
+
+.profile-name {
+  /* Временно для сетки */
+  min-width: 130px;
+}
+
+.profile-btn {
+  width: 30px;
+  border: none;
+  background-color: transparent;
+}
+
+.notifications-btn {
+  width: 25px;
+  height: 25px;
+  margin: 27px;
 }
 </style>

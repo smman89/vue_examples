@@ -2,9 +2,9 @@
   <nav class="page-menu">
     <Logo />
     <ul class="page-menu-list">
-      <li v-for="(menu, key) of menuList" :key="key" class="page-menu-list-item">
+      <li v-for="(menu, key) of menuList" :key="key" class="page-menu-item">
         <img :src="require('@/assets/icons/' + menu.icon)" :alt="menu.title" /><a
-          class="page-menu-list-item-title"
+          class="page-menu-item-link"
           href="#"
           >{{ menu.title }}</a
         >
@@ -37,24 +37,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-ul {
-  list-style: none;
-}
 .page-menu {
   grid-area: navigation;
+  display: grid;
+  grid-template-rows:
+    80px
+    1fr
+    auto;
   &-list {
-    display: grid;
-    grid-template-rows:
-      80px
-      1fr
-      auto;
+    padding: 0;
+    margin: 0;
+    list-style: none;
     justify-items: start;
     grid-template-columns: 1fr;
-    &-item {
-      padding: 20px;
-      &-title {
-        padding-left: 20px;
-      }
+  }
+  &-tools {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &-item {
+    padding: 20px;
+    &-link {
+      padding-left: 20px;
     }
   }
 }
