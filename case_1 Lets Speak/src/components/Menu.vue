@@ -1,19 +1,20 @@
 <template>
   <nav class="page-menu">
-    <Logo />
+    <Logo class="logo" />
     <ul class="page-menu-list">
-      <li v-for="(menu, key) of menuList" :key="key" class="page-menu-item">
-        <img :src="require('@/assets/icons/' + menu.icon)" :alt="menu.title" /><a
-          class="page-menu-item-link"
-          href="#"
-          >{{ menu.title }}</a
-        >
+      <li
+        v-for="(menu, key) of menuList"
+        :key="key"
+        :class="'page-menu-item ' + (menu.isActive ? 'page-menu-item-active' : '')"
+      >
+        <img :src="require('@/assets/icons/' + menu.icon)" :alt="menu.title" />
+        <a class="page-menu-item-link" href="#">{{ menu.title }}</a>
       </li>
     </ul>
     <ul class="page-menu-tools">
-      <li class="page-menu-tools-item">
-        <img :src="require('@/assets/icons/tools.svg')" alt="tools" />
-        <a class="menu-item-title" href="#">Настройки</a>
+      <li class="page-menu-item">
+        <img :src="require('@/assets/icons/tools.svg')" alt="Настройки" />
+        <a class="page-menu-item-link" href="#">Настройки</a>
       </li>
     </ul>
   </nav>
@@ -26,10 +27,10 @@ export default {
   data() {
     return {
       menuList: [
-        { title: 'Кабинет ученика', icon: 'studentsOffice.svg' },
-        { title: 'Учебный класс', icon: 'hat.svg' },
-        { title: 'Методика', icon: 'boock.svg' },
-        { title: 'Домашняя работа', icon: 'completedList.svg' }
+        { title: 'Кабинет ученика', icon: 'studentsOffice.svg', isActive: true },
+        { title: 'Учебный класс', icon: 'hat.svg', isActive: false },
+        { title: 'Методика', icon: 'boock.svg', isActive: false },
+        { title: 'Домашняя работа', icon: 'completedList.svg', isActive: false }
       ]
     }
   }
@@ -37,6 +38,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../style/base/colors';
+
+.logo {
+  margin: 24px 30px 15px;
+}
 .page-menu {
   grid-area: navigation;
   display: grid;
@@ -44,6 +50,29 @@ export default {
     80px
     1fr
     auto;
+
+  border-right: 1px solid $perano;
+
+  &-tools {
+    padding: 0;
+    margin: 0 0 10px 0;
+    list-style: none;
+    &-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+    }
+    &-link {
+      position: relative;
+      display: block;
+      padding: 20px 25px 20px 63px;
+
+      font-size: 16px;
+      line-height: 20px;
+      color: $darkBlue;
+      text-decoration: none;
+    }
+  }
+
   &-list {
     padding: 0;
     margin: 0;
@@ -51,16 +80,31 @@ export default {
     justify-items: start;
     grid-template-columns: 1fr;
   }
-  &-tools {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
 
   &-item {
-    padding: 20px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    img {
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: auto 20px;
+    }
     &-link {
-      padding-left: 20px;
+      position: relative;
+      display: block;
+      padding: 20px 0;
+
+      font-size: 16px;
+      line-height: 20px;
+      color: $darkBlue;
+      text-decoration: none;
+    }
+    &-active {
+      background-color: $lightBlue;
+      .page-menu-link {
+        font-weight: 500;
+        color: $indigo;
+      }
     }
   }
 }

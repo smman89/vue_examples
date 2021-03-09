@@ -1,5 +1,5 @@
 <template>
-  <a class="logo" href="#">
+  <a href="#">
     <img
       class="logo-img"
       src="https://assets.htmlacademy.ru/content/skills/6/case-01/img/logo.svg"
@@ -9,10 +9,3 @@
     />
   </a>
 </template>
-
-<script>
-export default {};
-</script>
-
-<style>
-</style>

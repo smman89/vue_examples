@@ -5,12 +5,13 @@ $primaryWhite: #FFFFFF;
 $indigo: #576BCC;
 $eggBlue: #0BC4CF;
 $perano: #B4BEF0;
+$orange: #ff8f0b;
 
 //Screen Colors
 $screenLightBlue: $lightBlue;
 
 //typography
-$text-color--regular: $darkBlue !global;
-$text-color--accent: $eggBlue !global;
-$text-color--blue: $indigo !global;
-$text-color--white: $primaryWhite !global;
+$text-color--regular: $darkBlue;
+$text-color--accent: $eggBlue;
+$text-color--blue: $indigo;
+$text-color--white: $primaryWhite;

@@ -1,6 +1,28 @@
+.h3 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: $darkBlue;
+}
+
+
 [class*="__regular"] {
     font-weight: 300;
     font-size: 16px;
     line-height: 20px;
+    color: $text-color--white;
+} 
+
+[class*="__primary"] {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: $text-color--white;
+} 
+
+[class*="__heading"] {
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 48px;
     color: $text-color--white;
 } 

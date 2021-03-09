@@ -18,10 +18,14 @@
 </template>
 
 <style lang="scss" scoped>
+@import '../style/base/colors';
+
 .page-header {
   grid-area: header;
   display: grid;
   grid-template-columns: 1fr auto 80px;
+  background-color: $primaryWhite;
+  border-bottom: 1px solid $perano;
   &-input {
     border-style: none;
   }
@@ -31,6 +35,21 @@
   margin-left: 30px;
   &-field {
     padding: 20px 20px 20px 32px;
+
+    font-family: inherit;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: $darkBlue;
+    border: none;
+    background-image: url('https://assets.htmlacademy.ru/content/skills/6/case-01/img/search.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px 20px;
+
+    &::placeholder {
+      color: $perano;
+    }
   }
 }
 .user {
@@ -43,7 +62,7 @@
     left: 1115px;
     top: 20px;
 
-    background: #f1f3fe;
+    background: $lightBlue;
     border-radius: 20px;
   }
 }
@@ -62,22 +81,68 @@
   content: attr(data-text);
   width: 40px;
   height: 40px;
+
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 40px;
+  text-align: center;
+  color: $perano;
+  border-radius: 50%;
+  background-color: $lightBlue;
 }
 
 .profile-name {
-  /* Временно для сетки */
-  min-width: 130px;
+  font-size: 16px;
+  line-height: 40px;
+  color: $darkBlue;
+  text-decoration: none;
 }
 
 .profile-btn {
+  position: relative;
   width: 30px;
   border: none;
   background-color: transparent;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 6px solid $indigo;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+  }
 }
 
 .notifications-btn {
   width: 25px;
   height: 25px;
   margin: 27px;
+
+  background-image: url('https://assets.htmlacademy.ru/content/skills/6/case-01/img/notifications.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+  background-color: transparent;
+  border: none;
+  span {
+    display: inline-block;
+    position: relative;
+    right: -5px;
+    top: -5px;
+    width: 14px;
+    height: 14px;
+    font-weight: 900;
+    font-size: 10px;
+    line-height: 14px;
+    color: $primaryWhite;
+    background-color: $orange;
+    border-radius: 50%;
+    border: 2px solid $primaryWhite;
+  }
 }
 </style>

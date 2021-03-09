@@ -11,7 +11,11 @@
     <div class="video-play-list-wrapper box">
       <h3>Курс English A1</h3>
       <ul class="play-list">
-        <li class="play-item" v-for="(video, key) of videoList" :key="key">
+        <li
+          :class="'play-item ' + (video.isActive ? 'play-item-active' : '')"
+          v-for="(video, key) of videoList"
+          :key="key"
+        >
           <button class="play-button" type="button"></button>
           <h4>{{ video.title }}</h4>
           <p>{{ video.descripion }}</p>
@@ -26,10 +30,10 @@ export default {
   data() {
     return {
       videoList: [
-        { title: 'Урок 8', descripion: 'Времена глаголов' },
-        { title: 'Урок 9', descripion: 'Неправильные глаголы' },
-        { title: 'Урок 10', descripion: 'Present Simple' },
-        { title: 'Урок 11', descripion: 'Past Simple' }
+        { title: 'Урок 8', descripion: 'Времена глаголов', isActive: false },
+        { title: 'Урок 9', descripion: 'Неправильные глаголы', isActive: true },
+        { title: 'Урок 10', descripion: 'Present Simple', isActive: false },
+        { title: 'Урок 11', descripion: 'Past Simple', isActive: false }
       ]
     }
   }
@@ -47,7 +51,16 @@ export default {
 
   h3 {
     margin: 20px 0 13px 30px;
+    border-bottom: 1px solid #e4e8fc;
   }
+}
+
+.video-play-list-wrapper {
+  position: relative;
+  height: 300px;
+  background: $primaryWhite;
+  box-shadow: 0 1px 4px rgba(60, 66, 95, 0.2);
+  border-radius: 4px;
 }
 
 .play-list {
@@ -57,6 +70,11 @@ export default {
   height: 235px;
   overflow-y: auto;
 }
+
+.lesson-video {
+  width: 540px;
+  height: 300px;
+}
 .play-item {
   display: grid;
   grid-template-columns: 32px auto;
@@ -64,6 +82,23 @@ export default {
   grid-template-areas:
     'button title'
     'button desc';
+  grid-column-gap: 13px;
+  padding: 8px 10px 8px 30px;
+
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #3c425f;
+  &-active {
+    background-color: $lightBlue;
+
+    .play-button {
+      background-color: $indigo;
+      &::before {
+        border-left-color: $primaryWhite;
+      }
+    }
+  }
   h4 {
     grid-area: title;
     margin: 0;
@@ -78,7 +113,7 @@ export default {
   grid-area: button;
   width: 32px;
   height: 32px;
-  background-color: #f1f3fe;
+  background-color: $lightBlue;
   border-radius: 4px;
   border: none;
 }

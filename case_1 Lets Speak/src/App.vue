@@ -48,7 +48,6 @@ export default {
     80px
     1fr
     60px;
-  grid-gap: 30px;
   min-height: 100vh;
 }
 .container {
