@@ -8,14 +8,21 @@
         в окружении экологически чистых лесов, рек и озёр
       </p>
       <div class="welcome-button">
-        <a href="" class="button"></a>
+        <a href="" class="button">Арендовать</a>
       </div>
       <ul class="social-media">
         <li class="social-media-item" v-for="(item, key) of socialMediaItems" :key="key">
           <img :src="require('@/assets/icons/' + item.icon)" :alt="item.alt" />
         </li>
       </ul>
-      <div class="welcome-img-container" />
+      <div class="welcome-img-container">
+        <img
+          src="https://assets.htmlacademy.ru/content/skills/6/case-02/img/intro-welcome.jpg"
+          alt="Загородный дом"
+          width="795"
+          height="496"
+        />
+      </div>
 
       <div class="slider-controls">
         <button class="slider-button slider-button-prev" type="button"></button>
@@ -41,7 +48,18 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../style/base/colors';
+
 .welcome {
+  background-color: #f2f8fb;
+
+  &-content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-column-gap: 24px;
+  }
+
   padding-bottom: 100px;
   &-city {
     grid-area: 1 / 2 / 2 / 8;
@@ -54,6 +72,11 @@ export default {
     grid-area: 3 / 2 / 4 / 8;
     z-index: 1;
     margin: 10px 0 40px 0;
+
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 34px;
+    color: #333333;
   }
 
   &-button {
@@ -61,14 +84,14 @@ export default {
     margin-bottom: 90px;
   }
 
-  &-content {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(5, auto);
-    grid-column-gap: 24px;
-  }
-  &-image-container {
+  &-img-container {
     grid-area: 1 / 6 / -1 / -1;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }
 
@@ -80,8 +103,23 @@ export default {
     grid-template-columns: auto auto 1fr;
   }
   &-button {
-    //@at-ro
-    margin: 1;
+    width: 105px;
+    height: 66px;
+    padding: 0;
+    border: none;
+    background-color: $white;
+    &-prev {
+      background-image: url('https://assets.htmlacademy.ru/content/skills/6/case-02/img/arrow-left.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 30px 16px;
+    }
+    &-next {
+      background-image: url('https://assets.htmlacademy.ru/content/skills/6/case-02/img/arrow-right.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 30px 16px;
+    }
   }
   &-page {
     margin: 10px 30px 0 0;

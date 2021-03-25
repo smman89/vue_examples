@@ -2,17 +2,25 @@
   <header class="page-header">
     <nav class="page-nav container">
       <ul class="site-nav">
-        <li class="site-nav-item" v-for="(item, key) of navigationLinks" :key="key">{{ item.title }}</li>
+        <li class="site-nav-item" v-for="(item, key) of navigationLinks" :key="key">
+          <a class="site-nav-link page-link" href="#">{{ item.title }}</a>
+        </li>
       </ul>
       <div class="logo-container">
-        <a href="#" class="logo"></a>
+        <a href="#" class="logo">
+          <img
+            src="https://assets.htmlacademy.ru/content/skills/6/case-02/img/logo.svg"
+            width="97"
+            height="30"
+            alt="Логотип компании Alt Home"
+          />
+        </a>
       </div>
       <div class="search-container">
         <a href="" class="search"></a>
       </div>
       <div class="user-nav">
-        <a href="" class="page-link"></a>
-        <a href="" class="page-link"></a>
+        <a class="page-link" href="#">Вход</a> или <a class="page-link" href="#">регистрация</a>
       </div>
     </nav>
   </header>
@@ -33,6 +41,7 @@ export default {
 .page {
   &-header {
     grid-area: header;
+    background-color: #f2f8fb;
   }
   &-nav {
     display: grid;

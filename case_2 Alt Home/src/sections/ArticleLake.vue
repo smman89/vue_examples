@@ -33,7 +33,11 @@
         alt="Мужчины играют в пляжный волейбол"
         class="big-pic"
       />
-      <p></p>
+      <p>
+        Около каждого коттеджа есть детская площадка с качелями и горками, а на территории парка работает детская
+        комната. Вы сможете позволить себе любой отдых зная, что ваш ребёнок находится под присмотром опытных
+        специалистов.
+      </p>
       <blockquote>
         Мы предлагаем не только уютные дома, большой выбор развлечений и активностей для вас и вашей семьи, но и
         масштабные праздники, спортивные турниры и возможность встретить новых друзей.
@@ -51,7 +55,7 @@
         бесплатно.
       </p>
       <div class="place-button-container">
-        <a class="button" href="#"></a>
+        <a class="button" href="#">Бесплатно забронировать</a>
       </div>
     </div>
   </article>
@@ -93,6 +97,12 @@
     blockquote {
       grid-column: 4 / 10;
       margin: 0 0 35px 0;
+      padding-left: 30px;
+
+      font-weight: normal;
+      font-size: 22px;
+      line-height: 40px;
+      border-left: 1px solid #06a9b3;
     }
   }
 }
@@ -103,6 +113,10 @@
   &-left {
     grid-column: 2/4;
     margin-top: 20px;
+
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
   }
   &-right {
     grid-column: -4/-2;
